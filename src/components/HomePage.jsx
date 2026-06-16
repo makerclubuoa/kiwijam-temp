@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Registration CTA band (forest green, zigzag edges) ── */}
+      {/* ── Registration CTA band ── */}
       <section className="region-band">
         <div className="region-band__inner region-band__inner--cta">
           <h2 className="region-band__title">Registration is FREE</h2>
@@ -153,7 +153,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── About + Auckland details (medium green) ── */}
+      {/* ── About + Auckland details ── */}
       <section className="about-band" id="about">
         <div className="about-band__inner">
           <div className="about-band__top">
@@ -204,13 +204,15 @@ export default function HomePage() {
             <div className="about-band__media">
               <div className="video-frame">
                 <iframe
-                  src="https://www.youtube-nocookie.com/embed/puwGFUUpHK0"
+                  src="https://www.youtube-nocookie.com/embed/2eLVumnZC1E"
                   title="Kiwijam mini-doc"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
-
+              <p className="about-band__caption">
+                Check out the full mini-doc for a taste of Kiwijam '21! (9 mins)
+              </p>
             </div>
           </div>
 
@@ -234,7 +236,7 @@ export default function HomePage() {
             <div className="akl-map">
               <iframe
                 title="Unleash Space, University of Auckland"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.627884774894!2d174.76636867687765!3d-36.85226587224072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef8684794936!2sUnleash%20Space%2C%20University%20of%20Auckland!5e0!3m2!1sen!2snz!4v1718000000000!5m2!1sen!2snz"
+                src="https://maps.google.com/maps?q=Unleash+Space,+University+of+Auckland,+Auckland+CBD&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
+const REGISTER_URL = 'https://events.humanitix.com/kiwijam-2026'
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -29,7 +31,7 @@ export default function Navbar() {
           <Link to="/about-the-jam" className={`nav__link${isActive('/about-the-jam') ? ' nav__link--active' : ''}`} onClick={close}>About</Link>
           <Link to="/code-of-conduct" className={`nav__link${isActive('/code-of-conduct') ? ' nav__link--active' : ''}`} onClick={close}>Code of Conduct</Link>
           <a
-            href="https://itch.io/jam/kiwijam25"
+            href={REGISTER_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="nav__link nav__link--cta"
