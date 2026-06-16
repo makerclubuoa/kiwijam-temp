@@ -20,7 +20,7 @@
 }
 
 .btn--green:hover {
-  background: #3f9252;
+  background: #2f9a4d;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(46, 93, 64, 0.3);
 }
@@ -39,12 +39,12 @@
 .btn--white {
   background: #fff;
   color: var(--green-dark);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .btn--white:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* ============ Video frame ============ */
@@ -70,7 +70,7 @@
 /* ============ Hero ============ */
 .hero {
   background: transparent; /* light topographic bg.svg shows through */
-  padding: 4.5rem 2rem 5.5rem;
+  padding: 4rem 2rem 5rem;
 }
 
 .hero__inner {
@@ -82,6 +82,16 @@
   align-items: center;
 }
 
+.hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--green);
+  margin-bottom: 0.9rem;
+}
+
 .hero__title {
   font-family: var(--font);
   font-size: clamp(1.9rem, 3.4vw, 2.85rem);
@@ -89,39 +99,12 @@
   color: var(--text);
   line-height: 1.18;
   letter-spacing: -0.01em;
-  margin-bottom: 1.5rem;
-}
-
-.hero-cities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-city {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.hero-city__maori {
-  font-family: var(--font);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--green);
-}
-
-.hero-city__city {
-  font-family: var(--font);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
+  margin-bottom: 1.25rem;
 }
 
 .hero__intro {
   font-family: var(--font-sans);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--text-mid);
   line-height: 1.6;
@@ -134,11 +117,11 @@
   gap: 1rem;
 }
 
-/* ============ Zigzag (torn-paper) edges ============ */
+/* ============ Registration CTA band (forest green, zigzag edges) ============ */
 .region-band {
   position: relative;
   background: var(--band-dark);
-  padding: 3.25rem 2rem;
+  padding: 3.5rem 2rem;
 }
 
 /* teeth pointing UP into the hero above */
@@ -164,56 +147,41 @@
   z-index: 2;
 }
 
-.region-band__inner {
-  max-width: var(--max-w);
+.region-band__inner--cta {
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
 }
 
 .region-band__title {
   font-family: var(--font);
-  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #fff;
-  margin-bottom: 2.25rem;
-}
-
-.region-cities {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.region-city {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  line-height: 1.15;
-  transition: transform 0.2s var(--ease);
-}
-
-.region-city:hover {
-  transform: translateY(-3px);
-}
-
-.region-city__maori {
-  font-family: var(--font);
-  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 700;
   color: #fff;
+  margin-bottom: 0.9rem;
 }
 
-.region-city__city {
-  font-family: var(--font);
-  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
-  font-weight: 700;
+.region-band__text {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.region-band__link {
   color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-/* ============ About (medium green) ============ */
+.region-band__link:hover {
+  color: var(--green-light);
+}
+
+/* ============ About + Auckland details (medium green) ============ */
 .about-band {
   position: relative;
   background: var(--band-mid);
@@ -238,11 +206,11 @@
 .about-band__inner {
   position: relative;
   z-index: 1;
-}
-
-.about-band__inner {
   max-width: var(--max-w);
   margin: 0 auto;
+}
+
+.about-band__top {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
@@ -257,7 +225,7 @@
   margin-bottom: 1rem;
 }
 
-.about-band__heading:not(:first-child) {
+.about-band__copy .about-band__heading:not(:first-child) {
   margin-top: 2.25rem;
 }
 
@@ -267,10 +235,6 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
   line-height: 1.65;
-}
-
-.about-band__cta {
-  margin-top: 1.75rem;
 }
 
 .about-band__link {
@@ -298,10 +262,153 @@
   margin-top: 1rem;
 }
 
+/* ── Auckland detail blocks ── */
+.akl-block {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.akl-note {
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+/* Map */
+.akl-map {
+  margin-top: 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.akl-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Schedule */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.schedule-day {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.schedule-day__name {
+  font-family: var(--font);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--green-light);
+}
+
+.schedule-day__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.schedule-day__item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.schedule-day__time {
+  color: var(--green);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.schedule-day__text {
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+/* WiFi */
+.wifi-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 1.4rem 1.8rem;
+}
+
+.wifi-box__row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.wifi-box__label {
+  width: 90px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wifi-box__value {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+/* Sponsors */
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem 1.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s var(--ease);
+}
+
+.sponsor-logo:hover {
+  transform: translateY(-3px);
+}
+
+.sponsor-logo img {
+  max-height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* ============ Responsive ============ */
 @media (max-width: 920px) {
   .hero__inner,
-  .about-band__inner {
+  .about-band__top {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
@@ -310,11 +417,15 @@
     position: static;
     order: -1;
   }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
   .hero {
-    padding: 3rem 1.25rem 4rem;
+    padding: 2.5rem 1.25rem 3.5rem;
   }
 
   .region-band,
@@ -323,12 +434,8 @@
     padding-right: 1.25rem;
   }
 
-  .region-cities {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem 1rem;
-  }
-
-  .hero-cities {
-    gap: 1rem 1.75rem;
+  .wifi-box {
+    display: flex;
+    width: 100%;
   }
 }
