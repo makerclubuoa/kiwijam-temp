@@ -1,0 +1,110 @@
+.cities {
+  background: var(--c-light-bg);
+  padding: 5.5rem 2rem;
+}
+
+.cities__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.cities__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: var(--c-text-dark);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.025em;
+}
+
+.cities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* ── Card ── */
+.city-card {
+  position: relative;
+  background: #fff;
+  border-radius: var(--r-lg);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s, border-color 0.3s;
+  overflow: hidden;
+}
+
+.city-card__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c-green), var(--c-teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(66, 177, 94, 0.14), 0 0 0 1px rgba(66, 177, 94, 0.12);
+  border-color: rgba(66, 177, 94, 0.25);
+}
+
+.city-card:hover .city-card__bar {
+  transform: scaleX(1);
+}
+
+.city-card__maori {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-text-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.city-card__english {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-green);
+}
+
+.city-card__arrow {
+  width: 20px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.2);
+  margin-top: 0.75rem;
+  transition: transform 0.3s var(--ease-out), color 0.2s;
+  align-self: flex-end;
+}
+
+.city-card:hover .city-card__arrow {
+  transform: translateX(4px);
+  color: var(--c-green);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cities__grid {
+    grid-template-columns: 1fr;
+  }
+  .cities {
+    padding: 4rem 1.25rem;
+  }
+}

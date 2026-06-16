@@ -1,0 +1,334 @@
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s, border-color 0.18s, color 0.18s;
+  white-space: nowrap;
+}
+
+.btn--green {
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(46, 93, 64, 0.22);
+}
+
+.btn--green:hover {
+  background: #3f9252;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(46, 93, 64, 0.3);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.btn--outline:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn--white {
+  background: #fff;
+  color: var(--green-dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn--white:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* ============ Video frame ============ */
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ============ Hero ============ */
+.hero {
+  background: transparent; /* light topographic bg.svg shows through */
+  padding: 4.5rem 2rem 5.5rem;
+}
+
+.hero__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero__title {
+  font-family: var(--font);
+  font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-city {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.hero-city__maori {
+  font-family: var(--font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.hero-city__city {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero__intro {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ============ Zigzag (torn-paper) edges ============ */
+.region-band {
+  position: relative;
+  background: var(--band-dark);
+  padding: 3.25rem 2rem;
+}
+
+/* teeth pointing UP into the hero above */
+.region-band::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16'%3E%3Cpath d='M0 16 L14 0 L28 16 Z' fill='%232f7d4a'/%3E%3C/svg%3E") repeat-x bottom / 28px 16px;
+}
+
+/* teeth pointing DOWN into the about band below */
+.region-band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16'%3E%3Cpath d='M0 0 L14 16 L28 0 Z' fill='%232f7d4a'/%3E%3C/svg%3E") repeat-x top / 28px 16px;
+  z-index: 2;
+}
+
+.region-band__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.region-band__title {
+  font-family: var(--font);
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  margin-bottom: 2.25rem;
+}
+
+.region-cities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.region-city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  line-height: 1.15;
+  transition: transform 0.2s var(--ease);
+}
+
+.region-city:hover {
+  transform: translateY(-3px);
+}
+
+.region-city__maori {
+  font-family: var(--font);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.region-city__city {
+  font-family: var(--font);
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ============ About (medium green) ============ */
+.about-band {
+  position: relative;
+  background: var(--band-mid);
+  padding: 4.5rem 2rem 5rem;
+  overflow: hidden;
+}
+
+/* faint fern decoration, top-right */
+.about-band::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  width: 320px;
+  height: 320px;
+  background: url("/CurlyFern2-1.svg") no-repeat center / contain;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-band__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.about-band__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.about-band__heading {
+  font-family: var(--font);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.about-band__heading:not(:first-child) {
+  margin-top: 2.25rem;
+}
+
+.about-band__text {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.65;
+}
+
+.about-band__cta {
+  margin-top: 1.75rem;
+}
+
+.about-band__link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.about-band__link:hover {
+  color: var(--green-light);
+}
+
+.about-band__media {
+  position: sticky;
+  top: 100px;
+}
+
+.about-band__caption {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 920px) {
+  .hero__inner,
+  .about-band__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-band__media {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .region-band,
+  .about-band {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .region-cities {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1rem;
+  }
+
+  .hero-cities {
+    gap: 1rem 1.75rem;
+  }
+}

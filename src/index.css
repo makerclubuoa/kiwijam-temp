@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #3eb15e;
+  --green-dark: #2c8049;
+  --green-light: #ebffed;
+  --band-dark: #2f7d4a;   /* "select your region" forest-green band */
+  --band-mid: #48ab68;    /* "what is a game jam" medium-green section */
+  --navy: #222e3a;
+  --text: #1a1a1a;
+  --text-mid: #444;
+  --text-muted: #777;
+  --border: #e0e0e0;
+  --white: #ffffff;
+  --font: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'Quicksand', 'Roboto', system-ui, sans-serif;
+  --nav-h: 76px;
+  --max-w: 1200px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }

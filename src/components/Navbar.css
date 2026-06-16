@@ -1,0 +1,207 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 248, 246, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: box-shadow 0.2s;
+}
+
+.nav--shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.nav__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Desktop nav links */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: auto;
+}
+
+.nav__link {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green);
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: var(--green-dark);
+  background: rgba(74, 166, 94, 0.08);
+}
+
+/* Cities dropdown */
+.nav__drop {
+  position: relative;
+}
+
+.nav__drop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green);
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  cursor: pointer;
+}
+
+.nav__drop-btn:hover,
+.nav__drop--open .nav__drop-btn {
+  color: var(--green-dark);
+  background: rgba(74, 166, 94, 0.08);
+}
+
+.nav__chevron {
+  width: 10px;
+  height: 7px;
+  transition: transform 0.2s;
+}
+
+.nav__drop--open .nav__chevron {
+  transform: rotate(180deg);
+}
+
+.nav__drop-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem;
+  min-width: 150px;
+  list-style: none;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.18s, transform 0.18s;
+}
+
+.nav__drop--open .nav__drop-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: none;
+}
+
+.nav__drop-item {
+  display: block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  transition: background 0.12s, color 0.12s;
+}
+
+.nav__drop-item:hover {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+/* Hamburger */
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.nav__burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.2s;
+}
+
+.nav__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger--open span:nth-child(2) { opacity: 0; }
+.nav__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+  .nav__burger { display: flex; }
+
+  .nav__links {
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1rem 1rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.2s, transform 0.2s;
+    margin-left: 0;
+  }
+
+  .nav__links--open {
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+  }
+
+  .nav__drop { width: 100%; }
+  .nav__drop-btn { width: 100%; justify-content: space-between; }
+
+  .nav__drop-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: var(--green-light);
+    border-radius: 4px;
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    transform: none;
+    transition: max-height 0.25s;
+  }
+
+  .nav__drop--open .nav__drop-menu {
+    max-height: 200px;
+    pointer-events: all;
+  }
+}

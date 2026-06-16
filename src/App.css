@@ -1,0 +1,11 @@
+/* bg.svg repeats across the whole body — matches kiwijam.org custom CSS */
+body {
+  background-image: url('/bg.svg');
+  background-color: #fff;
+  background-repeat: repeat;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
