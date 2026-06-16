@@ -40,7 +40,7 @@ export default function InfoSection() {
         <div className="info-block info-block--flip">
           <div className="info-block__media reveal">
             <iframe
-              src="https://www.youtube.com/embed/JrZ_PisHCkI"
+              src="https://www.youtube.com/watch?v=puwGFUUpHK0"
               title="Kiwijam '21 mini-documentary"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -56,9 +56,7 @@ export default function InfoSection() {
               in its rules and guidelines sent out to its registered participants, so we recommend
               checking out our About the Jam page.
             </p>
-            <p className="info-block__caption">
-              Check out the full mini-doc for a taste of Kiwijam &rsquo;21! (9 mins)
-            </p>
+
             <a href="/about-the-jam" className="info-block__btn info-block__btn--outline">
               About the Jam
             </a>

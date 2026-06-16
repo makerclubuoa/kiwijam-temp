@@ -26,12 +26,22 @@
 .nav__logo {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .nav__logo-img {
   height: 40px;
   width: auto;
+  align-self: center;
+}
+
+.nav__logo-city {
+  font-family: var(--font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
 }
 
 /* Desktop nav links */
@@ -57,6 +67,19 @@
 .nav__link--active {
   color: var(--green-dark);
   background: rgba(74, 166, 94, 0.08);
+}
+
+.nav__link--cta {
+  color: #fff;
+  background: var(--green);
+  padding: 0.45rem 1.2rem;
+  margin-left: 0.4rem;
+  box-shadow: 0 2px 8px rgba(46, 93, 64, 0.22);
+}
+
+.nav__link--cta:hover {
+  color: #fff;
+  background: var(--green-dark);
 }
 
 /* Cities dropdown */

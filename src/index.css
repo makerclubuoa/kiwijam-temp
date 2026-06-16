@@ -5,11 +5,11 @@
 }
 
 :root {
-  --green: #3eb15e;
-  --green-dark: #2c8049;
+  --green: #479557;
+  --green-dark: #2c5d36;
   --green-light: #ebffed;
-  --band-dark: #2f7d4a;   /* "select your region" forest-green band */
-  --band-mid: #48ab68;    /* "what is a game jam" medium-green section */
+  --band-dark: #2c5d36;
+  --band-mid: #479557;
   --navy: #222e3a;
   --text: #1a1a1a;
   --text-mid: #444;
