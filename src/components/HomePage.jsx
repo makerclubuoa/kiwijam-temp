@@ -48,7 +48,7 @@ const SPONSORS = [
   },
 ]
 
-const REGISTER_URL = 'https://events.humanitix.com/kiwijam-2026'
+const REGISTER_URL = 'https://events.humanitix.com/kiwijam-auckland-2026'
 
 function GamepadIcon() {
   return (

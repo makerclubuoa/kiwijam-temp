@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
-const REGISTER_URL = 'https://events.humanitix.com/kiwijam-2026'
+const REGISTER_URL = 'https://events.humanitix.com/kiwijam-auckland-2026'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
