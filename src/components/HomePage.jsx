@@ -36,7 +36,7 @@ const SCHEDULE = [
 
 const SPONSORS = [
   {
-    src: '/CIE logo 2026.png',
+    src: '/CIE-Logo-WTR-Vertical-Colour.png',
     alt: 'UoA Centre for Innovation and Entrepreneurship',
     href: 'https://www.cie.auckland.ac.nz/',
   },
